@@ -61,21 +61,25 @@
 
     <script>
 
-        const nombre = localStorage.getItem("nombre");
-        const correo = localStorage.getItem("correo");
-        const telefono = localStorage.getItem("telefono");
-        const sabor = localStorage.getItem("sabor");
-        const edad = localStorage.getItem("edad");
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-        document.getElementById("tablaUsuarios").innerHTML = `
+    const tabla = document.getElementById("tablaUsuarios");
+
+    usuarios.forEach(usuario => {
+
+        tabla.innerHTML += `
+        
         <tr>
-            <td>${nombre}</td>
-            <td>${correo}</td>
-            <td>${telefono}</td>
-            <td>${sabor}</td>
-            <td>${edad}</td>
+            <td>${usuario.nombre}</td>
+            <td>${usuario.correo}</td>
+            <td>${usuario.telefono}</td>
+            <td>${usuario.sabor}</td>
+            <td>${usuario.edad}</td>
         </tr>
+
         `;
+
+    });
 
     </script>
 

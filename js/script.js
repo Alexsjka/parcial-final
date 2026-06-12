@@ -62,12 +62,17 @@ formulario.addEventListener("submit", function (e) {
 }
     
 
-    localStorage.setItem("nombre", nombre);
-    localStorage.setItem("correo", correo);
-    localStorage.setItem("telefono", telefono);
-    localStorage.setItem("sabor", sabor);
-    localStorage.setItem("edad", edad);
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+    usuarios.push({
+        nombre: nombre,
+        correo: correo,
+        telefono: telefono,
+        sabor: sabor,
+        edad: edad
+    });
+
+localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
 
     window.location.href = "usuarios.html";
