@@ -34,6 +34,7 @@
                     <th>Correo</th>
                     <th>Teléfono</th>
                     <th>Sabor Favorito</th>
+                    <th>Edad</th>
                 </tr>
 
             </thead>
@@ -64,6 +65,7 @@
         const correo = localStorage.getItem("correo");
         const telefono = localStorage.getItem("telefono");
         const sabor = localStorage.getItem("sabor");
+        const edad = localStorage.getItem("edad");
 
         document.getElementById("tablaUsuarios").innerHTML = `
         <tr>
@@ -71,6 +73,7 @@
             <td>${correo}</td>
             <td>${telefono}</td>
             <td>${sabor}</td>
+            <td>${edad}</td>
         </tr>
         `;
 

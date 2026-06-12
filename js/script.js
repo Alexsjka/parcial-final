@@ -15,8 +15,12 @@ formulario.addEventListener("submit", function (e) {
 
     const sabor =
         document.getElementById("sabor").value;
+    
+    const edad =
+    document.getElementById("edad").value.trim();
 
 
+    const regexEdad = /^(1[89]|[2-9][0-9])$/;
 
     const regexNombre =
         /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,40}$/;
@@ -51,12 +55,18 @@ formulario.addEventListener("submit", function (e) {
         return;
     }
 
+    if (!regexEdad.test(edad)) {
+
+    alert("Ingrese una edad válida (18-99 años)");
+    return;
+}
     
 
     localStorage.setItem("nombre", nombre);
     localStorage.setItem("correo", correo);
     localStorage.setItem("telefono", telefono);
     localStorage.setItem("sabor", sabor);
+    localStorage.setItem("edad", edad);
 
 
 
