@@ -1,0 +1,29 @@
+body{
+    background-color: white;
+}
+
+.morado{
+    background-color: #7b2cbf;
+}
+
+.titulo{
+    color: #7526b9;
+    font-weight: bold;
+}
+
+.btn-morado{
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+}
+
+.btn-morado:hover{
+    background-color: #5a189a;
+    color: white;
+}
+
+.banner{
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+}
